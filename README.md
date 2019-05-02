@@ -17,3 +17,7 @@ __Bold__
 ### 3-Tason otsikko
 (www.google.fi) URL-osoite
 
+```javascript
+var word = "world";
+console.log("hello "+word);
+```
