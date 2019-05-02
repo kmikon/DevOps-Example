@@ -1,5 +1,5 @@
 # DevOps-Example
-Esimerkki
+EsimerkkiDev
 * Bullet point
 1. Luettelo
 2. Luettelo 2
@@ -17,7 +17,7 @@ __Bold__
 ### 3-Tason otsikko
 (www.google.fi) URL-osoite
 
-```javascript
+```javascript   
 var word = "world";
 console.log("hello "+word);
 ```
