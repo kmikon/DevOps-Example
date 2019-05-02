@@ -7,7 +7,7 @@ pipeline {
     stage('Stop previous Docker container') {
         agent any 
         steps {
-            sh 'docker exec -it Docker_example pkill node || true && docker stop Docker_example || true && docker rm Docker_example || true'
+            sh 'docker exec -i Docker_example pkill node || true && docker stop Docker_example || true && docker rm Docker_example || true'
         }
     }
 
