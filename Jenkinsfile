@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'node:8-alpine'
-      args '-p 3000:3000'
+      args '-p 3000:3000 --name Example'
     }
 
   }
@@ -19,7 +19,9 @@ pipeline {
     }
     stage('Delivery') {
       steps {
-        sh 'npm start'
+        sh '''[ ! "$(docker ps -a | grep Example)" ] && docker container stop Example
+[ ! "$(docker ps -a | grep Example)" ] && docker container rm Example
+npm start'''
       }
     }
   }
