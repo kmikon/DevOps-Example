@@ -4,8 +4,7 @@ pipeline {
     stage('Check Docker') {
         agent any 
         steps {
-            echo 'Hello, Maven'
-            sh 'mvn --version'
+            sh 'docker stop Docker_example || true && docker rm Docker_example || true'
         }
     }
 
