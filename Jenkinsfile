@@ -1,14 +1,14 @@
 pipeline {
   agent none 
   stages {
-    stage('Check Docker') {
+    stage('Stop previous Docker container') {
         agent any 
         steps {
             sh 'docker stop Docker_example || true && docker rm Docker_example || true'
         }
     }
 
-  stage('Docker') {
+  stage('Run app in Docker container') {
       agent {
         docker {
           image 'node:8-alpine'
