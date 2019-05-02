@@ -1,5 +1,8 @@
 pipeline {
   agent none 
+  triggers {
+      pollSCM('* * * * *')
+  }
   stages {
     stage('Stop previous Docker container') {
         agent any 
