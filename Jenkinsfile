@@ -19,9 +19,7 @@ pipeline {
     }
     stage('Delivery') {
       steps {
-        sh '''[ ! "$(docker ps -a | grep Example)" ] && docker container stop Example
-[ ! "$(docker ps -a | grep Example)" ] && docker container rm Example
-npm start'''
+        sh 'npm start'
       }
     }
   }
