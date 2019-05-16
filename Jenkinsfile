@@ -43,5 +43,14 @@ pipeline {
         }
       }
     }
+
+    stage('Deploy for production')
+      when {
+        branch 'master'
+      }
+      agent any
+      steps {
+        sh 'echo hello'
+      }
   }
 }
