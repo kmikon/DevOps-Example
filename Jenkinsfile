@@ -44,7 +44,7 @@ pipeline {
       }
     }
 
-    stage('Deploy for production')
+    stage('Deploy for production'){
       when {
         branch 'master'
       }
@@ -52,5 +52,6 @@ pipeline {
       steps {
         sh 'echo hello'
       }
+    }
   }
 }
