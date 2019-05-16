@@ -5,6 +5,9 @@ pipeline {
   }
   stages {
     stage('Stop previous Docker container') {
+      when {
+        branch 'Development'
+      }
         agent any 
         steps {
             sh 'docker exec -i Docker_example pkill node || true && docker stop Docker_example || true && docker rm Docker_example || true'
